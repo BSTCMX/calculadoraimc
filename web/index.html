@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC | WebAssembly</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="hero">
+        <p class="eyebrow">Proyecto personal DIIS U3</p>
+        <h1>Calculadora de Salud Nutricional (IMC)</h1>
+        <p class="subtitle">
+          Logica en C compilada a WebAssembly. Clasificacion segun estandares OMS.
+        </p>
+        <dl class="meta">
+          <div><dt>Autor</dt><dd>Jorge Leal Cornejo</dd></div>
+          <div><dt>Matricula</dt><dd>ES251115052</dd></div>
+          <div><dt>Grupo</dt><dd>DS-DIIS-2601-B2-002</dd></div>
+        </dl>
+      </header>
+
+      <section class="panel">
+        <h2>Calcular IMC</h2>
+        <form id="form-imc" class="form-grid">
+          <label>
+            Peso (kg)
+            <input id="peso" type="number" min="0" step="0.1" placeholder="72" required />
+          </label>
+          <label>
+            Estatura (m)
+            <input id="estatura" type="number" min="0" step="0.01" placeholder="1.75" required />
+          </label>
+          <button type="submit" class="btn-primary">Calcular</button>
+        </form>
+        <p id="estado-modulo" class="status">Cargando modulo WebAssembly...</p>
+        <div id="resultado" class="resultado hidden" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Historial local</h2>
+          <button id="btn-limpiar" type="button" class="btn-secondary">Limpiar historial</button>
+        </div>
+        <p class="hint">Los registros se guardan en este navegador (localStorage).</p>
+        <ul id="historial" class="historial"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
